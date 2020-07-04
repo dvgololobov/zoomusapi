@@ -10,10 +10,6 @@ class APIClient {
     this.basicUrl = 'https://api.zoom.us/v2'
   }
 
-  set token(value) {
-    this._token = value
-  }
-
   updateToken () {
     this._token = helpers.token(this.APIKey, this.APISecret, 3600 * 1000)
   }
