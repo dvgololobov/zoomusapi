@@ -16,7 +16,4 @@ class APIClient {
 
 }
 
-const init = (APIKey = '', APISecret = '', expireTime = (1000 * 12 * 60 * 60)) => new APIClient(APIKey, APISecret, expireTime)
-
-module.exports = init
-module.exports.APIClient = APIClient
+module.exports = APIClient

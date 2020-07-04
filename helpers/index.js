@@ -1,7 +1,7 @@
 const qs = require('querystring')
 const jwt = require('jsonwebtoken')
 
-module.exports = {
+Helpers = {
   generateQueryParams: (params) => {
     let filteredObject = {}
     for (let key in params) {
@@ -21,5 +21,7 @@ module.exports = {
       exp: ((new Date()).getTime() + expireTime)
     }
   },
-  token: (key, secret, expireTime = 3600) => jwt.sign(this.generatePayload(key, expireTime), secret)
+  token: (key, secret, expireTime = 3600) => jwt.sign(Helpers.generatePayload(key, expireTime), secret)
 }
+
+module.exports = Helpers
