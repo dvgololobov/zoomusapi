@@ -1,6 +1,6 @@
 {
   "name": "zoomusapi",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The simple Zoom.us API Client based on Axios",
   "main": "index.js",
   "scripts": {
