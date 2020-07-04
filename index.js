@@ -3,9 +3,19 @@ const api = require('./api')
 const axios = require('axios')
 
 class APIClient {
-  constructor (APIKey = '', APISecret = '', expireTime = 3600) {
+  constructor (APIKey = '', APISecret = '', expireTime = 3600 * 1000) {
+    this.APIKey = APIKey
+    this.APISecret = APISecret
     this.token = helpers.token(APIKey, APISecret, expireTime)
     this.basicUrl = 'https://api.zoom.us/v2'
+  }
+
+  set token(value) {
+    this._token = value
+  }
+
+  updateToken() {
+    return helpers.token(this.APIKey, this.APISecret, 3600 * 1000)
   }
 
   /**
@@ -21,10 +31,12 @@ class APIClient {
    * @returns {*|AxiosPromise} Get data from response.data object
    */
   listMeetings (userEmail = '', params = {}) {
+    this.token(this.updateToken())
     return axios(api.meetings(userEmail, params, this.token, this.basicUrl).listMeetings())
   }
 
   createMeeting (userEmail = '', params = {}) {
+    this.token(this.updateToken())
     return axios(api.meetings(userEmail, params, this.token, this.basicUrl).createMeeting())
   }
 }

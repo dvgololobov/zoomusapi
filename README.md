@@ -3,7 +3,7 @@ The Zoom.us api client based on axios lib.
 
 ## Installation
 
-npm install zoomusapi
+`npm install zoomusapi`
 
 ## Usage
 
