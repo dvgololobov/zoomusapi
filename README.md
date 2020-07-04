@@ -5,7 +5,7 @@ The Zoom.us api client based on axios lib.
 
 npm install zoomusapi
 
-## Use
+## Usage
 
 Code examples:
 
