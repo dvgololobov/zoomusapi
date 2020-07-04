@@ -1,0 +1,17 @@
+{
+  "name": "zoomusapi",
+  "version": "1.0.0",
+  "description": "The simple Zoom.us API Client basic on Axios",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
