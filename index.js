@@ -14,10 +14,9 @@ class APIClient {
     this._token = value
   }
 
-  updateToken() {
-    return helpers.token(this.APIKey, this.APISecret, 3600 * 1000)
+  updateToken () {
+    this._token = helpers.token(this.APIKey, this.APISecret, 3600 * 1000)
   }
-
   /**
    *
    * @param userEmail - String email of zoom user
@@ -31,12 +30,12 @@ class APIClient {
    * @returns {*|AxiosPromise} Get data from response.data object
    */
   listMeetings (userEmail = '', params = {}) {
-    this.token(this.updateToken())
+    this.updateToken()
     return axios(api.meetings(userEmail, params, this.token, this.basicUrl).listMeetings())
   }
 
   createMeeting (userEmail = '', params = {}) {
-    this.token(this.updateToken())
+    this.updateToken()
     return axios(api.meetings(userEmail, params, this.token, this.basicUrl).createMeeting())
   }
 }
