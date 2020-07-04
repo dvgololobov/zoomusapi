@@ -1,17 +1,17 @@
 const qs = require('querystring')
 const jwt = require('jsonwebtoken')
 
-Helpers = {
+const Helpers = {
   generateQueryParams: (params) => {
-    let filteredObject = {}
-    for (let key in params) {
-      if(params[key] !== null) filteredObject[key] = params[key]
+    const filteredObject = {}
+    for (const key in params) {
+      if (params[key] !== null) filteredObject[key] = params[key]
     }
     return qs.stringify(filteredObject)
   },
-  addQueryParams: (defaultObject = {}, paramsObject = {}) => {
-    for (let key in paramsObject) {
-      if(params[key] !== null) defaultObject[key] = paramsObject[key]
+  addQueryParams: (defaultObject = {}, params = {}) => {
+    for (const key in params) {
+      if (params[key] !== null) defaultObject[key] = params[key]
     }
     return defaultObject
   },
