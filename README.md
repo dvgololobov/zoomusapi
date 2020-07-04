@@ -5,6 +5,50 @@ The Zoom.us api client based on axios lib.
 
 npm install zoomusapi
 
+## Use
+
+Code examples:
+
+With async/await:
+```javascript
+const Zoom = require('zoomusapi')
+const Api = new Zoom('API_KEY', 'API_SECRET', 'EXPIRE_TIME_IN_MILLISECONDS')
+
+const app = async () => {
+  const listMeetings = await Api.listMeetings('zoom_user@email.com')
+  console.log(listMeetings.data)
+}
+
+app()
+```
+
+With then chains:
+```javascript
+const Zoom = require('zoomusapi')
+const Api = new Zoom('API_KEY', 'API_SECRET', 'EXPIRE_TIME_IN_MILLISECONDS')
+
+const app = () => {
+  Api.listMeetings('zoom_user@email.com')
+    .then(result => {
+        console.log(result.data)
+    })
+}
+
+app()
+```
+
+All of that cases print object in your console:
+```json5
+{
+  "page_size": 30,
+  "total_records": 0,
+  "next_page_token": "",
+  "meetings": []
+}
+```
+## Next Features:
+- add some methods of zoom api
+
 ## Contributing
 
 1. Fork it!

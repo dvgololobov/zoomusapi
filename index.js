@@ -21,8 +21,11 @@ class APIClient {
    * @returns {*|AxiosPromise} Get data from response.data object
    */
   listMeetings (userEmail = '', params = {}) {
-    const clientParams = api.meetings(userEmail, params, this.token, this.basicUrl).listMeetings()
-    return axios(clientParams)
+    return axios(api.meetings(userEmail, params, this.token, this.basicUrl).listMeetings())
+  }
+
+  createMeeting (userEmail = '', params = {}) {
+    return axios(api.meetings(userEmail, params, this.token, this.basicUrl).createMeeting())
   }
 }
 
