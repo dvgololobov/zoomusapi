@@ -60,8 +60,5 @@ All of that cases print object in your console:
 ## History
 2020-07-04: First publish (This is beta. Don't use it)
 
-## Credits
-Dmitriy Gololobov - general mantainer
-
 ## License
 Apache 2.0
